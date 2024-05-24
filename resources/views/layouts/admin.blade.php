@@ -16,9 +16,9 @@
 
     @include('admin.partials.header')
 
-    <div class="main-wrapper d-flex ">
+    <div class="main-wrapper d-flex">
         @include('admin.partials.aside')
-        <div class="content p-5">
+        <div class="content p-5 w-75">
             @yield('content')
         </div>
     </div>

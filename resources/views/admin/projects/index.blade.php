@@ -33,11 +33,12 @@
     @endif
 
     {{-- Tabella per visualizzare i progetti --}}
-    <table class="table table-hover">
+    <table class="table table-hover w-100 ">
         <thead>
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Titolo</th>
+                <th scope="col">Tipo</th>
                 <th scope="col">Data</th>
                 <th scope="col">Azioni</th>
             </tr>
@@ -51,6 +52,9 @@
 
                     {{-- Titolo del progetto --}}
                     <td>{{ $project->title }}</td>
+
+                    {{-- Tipo del progetto --}}
+                    <td> {{ $project->type->title }} </td>
 
                     {{-- Data dell'ultimo aggiornamento formattata --}}
                     <td>{{ Carbon::parse($project->updated_at)->format('d/m/Y') }}</td>
