@@ -25,6 +25,12 @@
                     <span>Elenco Tipi</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('admin.type_projects') }}">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <span>Elenco Post per Tipi</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </aside>
