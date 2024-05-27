@@ -1,7 +1,25 @@
-<aside class="bg-dark navbar-dark text-white flex-shrink-0">
+<!-- Contenitore principale che utilizza Alpine.js per gestire lo stato di visibilità dell'aside -->
+<div x-data="{
+    {{-- // Inizializzazione dello stato isOpen con il valore salvato in local storage --}}
+    isOpen: JSON.parse(localStorage.getItem('asideOpen')) || false
+}"
+{{-- // Al caricamento della pagina, osserva i cambiamenti di isOpen e aggiorna il local storage di conseguenza --}}
+x-init="$watch('isOpen', value => localStorage.setItem('asideOpen', JSON.stringify(value)))"
+class="relative">
+
+<!-- Bottone per il toggle dell'aside. Al click, il valore di isOpen viene invertito (true/false) -->
+<button @click="isOpen = !isOpen" id="toggle-aside" class="btn btn-primary custom-toggle-btn">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<!-- Aside: la visibilità è controllata dalla classe 'visible', che viene aggiunta o rimossa in base allo stato di isOpen -->
+<aside class="bg-dark navbar-dark text-white flex-shrink-0"
+       :class="{'visible': isOpen}"
+       id="sidebar" >
     <nav>
         <ul>
             <li>
+                <!-- Link di navigazione con icone e testo -->
                 <a href="{{ route('admin.projects.index') }}">
                     <i class="fa-solid fa-diagram-project"></i>
                     <span>Elenco Progetti</span>
@@ -34,3 +52,4 @@
         </ul>
     </nav>
 </aside>
+</div>
