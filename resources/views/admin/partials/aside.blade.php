@@ -1,4 +1,4 @@
-<aside class="bg-dark navbar-dark text-white">
+<aside class="bg-dark navbar-dark text-white flex-shrink-0">
     <nav>
         <ul>
             <li>

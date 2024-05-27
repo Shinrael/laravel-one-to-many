@@ -54,7 +54,12 @@
                     <td>{{ $project->title }}</td>
 
                     {{-- Tipo del progetto --}}
+                    @if ($project->type)
                     <td> {{ $project->type->title }} </td>
+                    @else
+                    <td>Nothing</td>
+                    @endif
+
 
                     {{-- Data dell'ultimo aggiornamento formattata --}}
                     <td>{{ Carbon::parse($project->updated_at)->format('d/m/Y') }}</td>

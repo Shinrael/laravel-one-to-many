@@ -18,7 +18,7 @@
 
     <div class="main-wrapper d-flex">
         @include('admin.partials.aside')
-        <div class="content p-5 w-75">
+        <div class="content p-5 w-100 overflow-auto">
             @yield('content')
         </div>
     </div>

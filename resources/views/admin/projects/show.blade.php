@@ -10,6 +10,12 @@
 
     <h1>{{ $project->title }} <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project) }}"><i class="fa-solid fa-pencil"></i></a> </h1>
 
+    @if ($project->type)
+        <p> Tipo: <span class="badge text-bg-warning">{{ $project->type->title }}</span></p>
+    @else
+        <p> Tipo: <span class="badge text-bg-danger">Nothing</span></p>
+    @endif
+
 
     <div class="my-5">
         <p>{{ $project->body }}</p>
